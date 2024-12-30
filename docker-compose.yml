@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  next_app:
+    build: .
+    container_name: ai_archive_c
+    image: ai_archive:v1
+    ports:
+      - "3000:3000"
+    volumes:
+      - ".:/app"
+      - "/app/node_modules"
+    stdin_open: true
+    tty: true
+    working_dir: /app
